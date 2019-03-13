@@ -1,0 +1,63 @@
+/**index.wxss**/
+page {
+  background: #F2F2F2;
+}
+.scroll-view_H {
+  background: #FFFFFF;
+  white-space: nowrap;
+  position: fixed; 
+}
+.menu {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+.scroll-view_item {
+  font-size: 32rpx;
+  color: #666666;
+  margin: 0rpx 25rpx;
+  padding-bottom: 8rpx;
+}
+.active {
+    color:#48B871;
+    border-bottom: 4rpx solid #48B871;
+}
+.gallery {
+  display: flex;
+  flex-direction: row;
+}
+.panel {
+  margin-top: 100rpx;
+  width: 375rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.panel image {
+  width: 316rpx;
+  border-radius: 16rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */
