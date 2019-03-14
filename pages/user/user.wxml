@@ -1,2 +1,39 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class='userinfo'>
+  <image src='https://wx.qlogo.cn/mmopen/vi_32/GCiaODrDB8pNsLwmLibibpibQFTFARpIibuv0mqFomq2dPe5qQVmCQLG8x62iaicGpZpia0Aq14BWFA0L2JebUd3wia4lNQ/132'></image>
+  <view class='info_body'>
+    <text class='username'>代帅卿</text>
+    <text class='telephone'>188****0002</text>
+  </view>
+</view>
+<view class='dynamic'>
+  <view class='d_item'>
+    <text class='type_numb'>12</text>
+    <text class='type_name'>发布</text>
+  </view>
+  <view class='d_item'>
+    <text class='type_numb'>143</text>
+    <text class='type_name'>关注</text>
+  </view>
+  <view class='d_item'>
+    <text class='type_numb'>672</text>
+    <text class='type_name'>粉丝</text>
+  </view>
+</view>
+<view class='frame'>
+  <view class='f_item'>
+    <view class='f_item_title'>
+      <image src='../../images/user/icon_notice.png'></image>
+      <text>我的消息</text>
+    </view>
+    <image class='f_goto' src='../../images/user/icon_next_arrow.png'></image>
+  </view>
+  <view class='f_line'></view>
+  <view class='f_item'>
+    <view class='f_item_title'>
+      <image src='../../images/user/icon_star.png'></image>
+      <text>我的赞/收藏</text>
+    </view>
+    <image class='f_goto' src='../../images/user/icon_next_arrow.png'></image>
+  </view>
+</view>
