@@ -1,3 +1,5 @@
+var api = require('../config/api.js');
+//格式化时间对象
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -14,6 +16,51 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+/**
+ * 封封微信的的request
+ */
+function request(url, data = {}, method = "GET") {
+  return new Promise(function(resolve, reject) {
+    wx.request({
+      url: api.WxApiRoot+url,
+      data: data,
+      method: method,
+      header: {
+        'Content-Type': 'application/json',
+        // 'X-Litemall-Token': wx.getStorageSync('token') 请求的时候带着token
+      },
+      success: function(res) {
+
+        if (res.statusCode == 200) {
+
+          if (res.data.code == 501) {
+            // 清除登录相关内容
+            try {
+              wx.removeStorageSync('userInfo');
+              wx.removeStorageSync('token');
+            } catch (e) {
+              // Do something when catch error
+            }
+            // 切换到登录页面
+            wx.navigateTo({
+              url: 'pages/logs/logs'
+            });
+          } else {
+            resolve(res.data);
+          }
+        } else {
+          reject(res.errMsg);
+        }
+
+      },
+      fail: function(err) {
+        reject(err)
+      }
+    })
+  });
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  request
 }

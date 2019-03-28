@@ -3,12 +3,12 @@
   <image src='https://wx.qlogo.cn/mmopen/vi_32/GCiaODrDB8pNsLwmLibibpibQFTFARpIibuv0mqFomq2dPe5qQVmCQLG8x62iaicGpZpia0Aq14BWFA0L2JebUd3wia4lNQ/132'></image>
   <view class='info_body'>
     <text class='username'>代帅卿</text>
-    <text class='telephone'>188****0002</text>
+    <text class='telephone'>账号认证：比特云网络科技软件工程师</text>
   </view>
 </view>
 <view class='dynamic'>
   <view class='d_item'>
-    <text class='type_numb'>12</text>
+    <text class='type_numb'>214</text>
     <text class='type_name'>发布</text>
   </view>
   <view class='d_item'>
@@ -23,16 +23,24 @@
 <view class='frame'>
   <view class='f_item'>
     <view class='f_item_title'>
-      <image src='../../images/user/icon_notice.png'></image>
-      <text>我的消息</text>
+      <image class='my-collection' src='../../images/user/mylike.png'></image>
+      <text>我的收藏</text>
     </view>
     <image class='f_goto' src='../../images/user/icon_next_arrow.png'></image>
   </view>
   <view class='f_line'></view>
   <view class='f_item'>
     <view class='f_item_title'>
-      <image src='../../images/user/icon_star.png'></image>
-      <text>我的赞/收藏</text>
+      <image class='my-feedback' src='../../images/user/my_feedback.png'></image>
+      <text>我的反馈</text>
+    </view>
+    <image class='f_goto' src='../../images/user/icon_next_arrow.png'></image>
+  </view>
+  <view class='f_line'></view>
+  <view class='f_item'>
+    <view class='f_item_title'>
+      <image class='my-feedback' src='../../images/user/my_upload.png'></image>
+      <text>上传图片</text>
     </view>
     <image class='f_goto' src='../../images/user/icon_next_arrow.png'></image>
   </view>

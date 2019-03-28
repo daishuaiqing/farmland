@@ -1,16 +1,3 @@
-<!--index.wxml-->
-<!-- <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view> -->
 <scroll-view class="scroll-view_H"  scroll-x="true" bindscroll="scroll" style="width: 100%">
     <view class='menu'>
       <text class="scroll-view_item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">关注</text>
@@ -23,7 +10,7 @@
       <text class="scroll-view_item {{currentTab==7?'active':''}}" data-current="7" bindtap="clickTab">周边</text>
     </view>
 </scroll-view>
-<view class='gallery'>
+<!-- <view class='gallery'>
   <view class='panel'>
     <image src='https://s2.ax1x.com/2019/03/13/AkWjwn.jpg' mode="widthFix"></image>
     <image src='https://s2.ax1x.com/2019/03/13/AkWzF0.md.jpg' mode="widthFix"></image>
@@ -34,4 +21,8 @@
     <image src='https://s2.ax1x.com/2019/03/13/AkfpWT.png' mode="widthFix"></image>
     <image src='https://s2.ax1x.com/2019/03/13/AkfSYV.md.jpg' mode="widthFix"></image>
   </view>
-</view>
+</view> -->
+
+<scroll-view class='main' scroll-y='true' style="height:{{windowHeight}}px" bindscrolltolower='loadMoreImages'>
+    <image wx:for='{{dataList}}' wx:key='item' src='{{item.src}}' style='position: absolute; top: {{item.top}}px; left: {{item.left}}px; width: {{imgWidth}}px; height: {{item.height}}px' bindload='loadImage' data-index='{{index}}' bindtap='previewImg'/>
+</scroll-view>
