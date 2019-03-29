@@ -5,4 +5,5 @@ var WxApiRoot = 'http://localhost/wx/';
 module.exports = {
     WxApiRoot: WxApiRoot, //请求根目录
     IndexUrl: 'home/index', //首页数据接口
+    WxLoginUrl: 'user/login',
 };

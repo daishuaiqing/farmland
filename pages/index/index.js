@@ -58,7 +58,7 @@ Page({
     var index = e.currentTarget.dataset.index; //图片所在索引
     var imgW = e.detail.width, imgH = e.detail.height; //图片实际宽度和高度
     var imgWidth = this.data.imgWidth; //图片宽度
-    var imgScaleH = imgWidth / imgW * imgH; //计算图片应该显示的高度
+    var imgScaleH = imgWidth / imgW * imgH; ///计算图片应该显示的高度
 
     var dataList = this.data.dataList;
     var margin = this.data.imgMargin;  //图片间距

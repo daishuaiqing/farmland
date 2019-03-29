@@ -1,28 +1,18 @@
-<scroll-view class="scroll-view_H"  scroll-x="true" bindscroll="scroll" style="width: 100%">
-    <view class='menu'>
-      <text class="scroll-view_item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">关注</text>
-      <text class="scroll-view_item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">推荐</text>
-      <text class="scroll-view_item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">榜单</text>
-      <text class="scroll-view_item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">明星</text>
-      <text class="scroll-view_item {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">搞笑</text>
-      <text class="scroll-view_item {{currentTab==5?'active':''}}" data-current="5" bindtap="clickTab">热门</text>
-      <text class="scroll-view_item {{currentTab==6?'active':''}}" data-current="6" bindtap="clickTab">健身</text>
-      <text class="scroll-view_item {{currentTab==7?'active':''}}" data-current="7" bindtap="clickTab">周边</text>
-    </view>
-</scroll-view>
-<!-- <view class='gallery'>
-  <view class='panel'>
-    <image src='https://s2.ax1x.com/2019/03/13/AkWjwn.jpg' mode="widthFix"></image>
-    <image src='https://s2.ax1x.com/2019/03/13/AkWzF0.md.jpg' mode="widthFix"></image>
-    <image src='https://s2.ax1x.com/2019/03/13/AkfCSU.jpg' mode="widthFix"></image>
-  </view>
-  <view class='panel'>
-    <image src='https://s2.ax1x.com/2019/03/13/AkWvoq.md.jpg' mode="widthFix"></image>
-    <image src='https://s2.ax1x.com/2019/03/13/AkfpWT.png' mode="widthFix"></image>
-    <image src='https://s2.ax1x.com/2019/03/13/AkfSYV.md.jpg' mode="widthFix"></image>
-  </view>
-</view> -->
 
-<scroll-view class='main' scroll-y='true' style="height:{{windowHeight}}px" bindscrolltolower='loadMoreImages'>
-    <image wx:for='{{dataList}}' wx:key='item' src='{{item.src}}' style='position: absolute; top: {{item.top}}px; left: {{item.left}}px; width: {{imgWidth}}px; height: {{item.height}}px' bindload='loadImage' data-index='{{index}}' bindtap='previewImg'/>
-</scroll-view>
+  <scroll-view class="scroll-view_H"  scroll-x="true" bindscroll="scroll" style="width: 100%">
+      <view class='menu'>
+        <text class="scroll-view_item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">关注</text>
+        <text class="scroll-view_item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">推荐</text>
+        <text class="scroll-view_item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">榜单</text>
+        <text class="scroll-view_item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">明星</text>
+        <text class="scroll-view_item {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">搞笑</text>
+        <text class="scroll-view_item {{currentTab==5?'active':''}}" data-current="5" bindtap="clickTab">热门</text>
+        <text class="scroll-view_item {{currentTab==6?'active':''}}" data-current="6" bindtap="clickTab">健身</text>
+        <text class="scroll-view_item {{currentTab==7?'active':''}}" data-current="7" bindtap="clickTab">周边</text>
+      </view>
+  </scroll-view>
+<view class='gallery'>
+  <scroll-view class='main' scroll-y='true' style="height:{{windowHeight}}px" bindscrolltolower='loadMoreImages'>
+      <image wx:for='{{dataList}}' wx:key='item' src='{{item.src}}' style='position: absolute; top: {{item.top}}px; left: {{item.left}}px; width: {{imgWidth}}px; height: {{item.height}}px' bindload='loadImage' data-index='{{index}}' bindtap='previewImg'/>
+  </scroll-view>
+</view>

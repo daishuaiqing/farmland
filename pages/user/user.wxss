@@ -60,7 +60,7 @@ page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 20rpx 28rpx;
+  margin: 30rpx 32rpx;
   align-items: center;
 }
 .f_item_title {
@@ -86,6 +86,6 @@ page {
   height: 28rpx;
 }
 .f_line {
-  height: 1rpx;
+  height: 2rpx;
   background: #F4F4F4;
 }

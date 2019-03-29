@@ -5,7 +5,6 @@ page {
 .scroll-view_H {
   background: #FFFFFF;
   white-space: nowrap;
-  position: fixed; 
 }
 .menu {
   height: 100rpx;
@@ -21,28 +20,14 @@ page {
   padding-bottom: 8rpx;
 }
 .active {
-    color:#48B871;
-    border-bottom: 4rpx solid #48B871;
+  color:#48B871;
+  border-bottom: 4rpx solid #48B871;
 }
-.gallery {
-  display: flex;
-  flex-direction: row;
+.main { 
+  width: 100%; 
+  height: 100%; 
+  position: relative; 
 }
-.panel {
-  margin-top: 100rpx;
-  width: 375rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.panel image {
-  width: 316rpx;
-  border-radius: 16rpx;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-}
-/* ------------------- */
-.main{ width: 100%; height: 100%; position: relative; }
 .main image {
-  box-shadow: 0 0 10rpx red; border-radius: 8rpx;
+  border-radius: 8rpx;
 }
