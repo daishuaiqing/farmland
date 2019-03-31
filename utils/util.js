@@ -46,7 +46,9 @@ function request(url, data = {}, method = "GET") {
               url: 'pages/logs/logs'
             });
           } else {
-            resolve(res.data);
+            //if(res.data.code == 200){
+              resolve(res.data.data);
+            //}
           }
         } else {
           reject(res.errMsg);

@@ -27,7 +27,7 @@ App({
     //   this.globalData.hasLogin = false;
 
     // });
-    wx.login({
+    /* wx.login({
       success(res) {
         if (res.code) {
           // 发起网络请求
@@ -41,7 +41,7 @@ App({
           console.log('登录失败！' + res.errMsg)
         }
       }
-    })
+    }) */
   },
   //全局数据配置
   globalData: {

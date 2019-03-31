@@ -4,6 +4,7 @@ var WxApiRoot = 'http://localhost/wx/';
 //生产环境
 module.exports = {
     WxApiRoot: WxApiRoot, //请求根目录
-    IndexUrl: 'home/index', //首页数据接口
+    IndexCategoryUrl: 'home/index', //首页分类数据
+    IndexGalleryUrl: 'home/gallery',
     WxLoginUrl: 'user/login',
 };

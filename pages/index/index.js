@@ -12,7 +12,10 @@ Page({
     imgMargin: 6, //图片边距: 单位px
     imgWidth: 0,  //图片宽度: 单位px
     topArr: [0, 0], //存储每列的累积top
-
+    pageInfo: {
+      page: 1, //初始页面 1
+      size: 15 //每页的数据条数 15
+    }
   },
   //切换分类
   clickTab: function (e) {
@@ -36,7 +39,7 @@ Page({
     //获取页面宽高度
     wx.getSystemInfo({
       success: function (res) {
-        console.log(res)
+        /* console.log(res) */
 
         var windowWidth = res.windowWidth;
         var imgMargin = that.data.imgMargin;
@@ -86,7 +89,7 @@ Page({
   },
   //加载更多图片
   loadMoreImages: function () {
-    var imgs = [
+    /* var imgs = [
       'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1409185525,4059560780&fm=26&gp=0.jpg',
       'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4076355782,2436939971&fm=15&gp=0.jpg',
       'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=777075993,2126273204&fm=11&gp=0.jpg',
@@ -120,7 +123,7 @@ Page({
       'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1629456501,1514429218&fm=26&gp=0.jpg',
     ];
 
-    var tmpArr = [];
+    
     for (let i = 0; i < 22; i++) {
       var index = parseInt(Math.random() * 100) % imgs.length;
       var obj = {
@@ -131,12 +134,30 @@ Page({
       }
       tmpArr.push(obj);
       imgs.splice(index, 1);
-    }
-
-    var dataList = this.data.dataList.concat(tmpArr)
-    this.setData({ dataList: dataList }, function(){
-      wx.hideLoading()
-    });
+    } */
+    //从服务器获取图片数据
+    util.request(api.IndexGalleryUrl,{
+      page: this.data.pageInfo.page
+    }).then(res => {
+      if(res.length==0){
+        return
+      }
+      var tmpArr = [];
+      for(let i = 0; i < res.length; i++){
+        var obj = {
+          src: res[i].url,
+          height: 0,
+          top: 0,
+          left: 0,
+        }
+        tmpArr.push(obj);
+      }
+      this.data.pageInfo.page += 1
+      var dataList = this.data.dataList.concat(tmpArr)
+      this.setData({ dataList: dataList }, function(){
+        wx.hideLoading()
+      });
+    })
   },
   /**预览图片 */
   previewImg: function (e) {

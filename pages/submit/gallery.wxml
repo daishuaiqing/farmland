@@ -1,0 +1,7 @@
+<view class="uploader-view">
+    <block wx:for="{{imageList}}" wx:for-item="image" wx:key='item'>
+        <image class="uploader-item" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>  
+    </block>
+    <view class="uploader-box" bindtap="chooseImage"></view>
+</view>
+
