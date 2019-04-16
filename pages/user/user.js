@@ -8,6 +8,12 @@ Page({
     
   },
 
+  toSubmit(){
+    wx.navigateTo({
+      url: '/pages/submit/gallery'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

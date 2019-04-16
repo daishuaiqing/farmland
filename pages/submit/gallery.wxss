@@ -44,6 +44,17 @@ page {
 .show {
     display: block;
 }
+.picker {
+    height: 100rpx;
+    width: 100%;
+    background: #ffffff;
+    margin: 16rpx 0rpx;
+    line-height: 100rpx;
+}
+.picker text {
+    font-size: 28rpx;
+    margin-left: 30rpx;
+}
 
 
 

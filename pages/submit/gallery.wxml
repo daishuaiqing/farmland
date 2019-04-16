@@ -1,3 +1,10 @@
+
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+        <text>分类：{{array[index]}}</text>
+    </view>
+</picker>
+
 <view class="uploader-view">
     <block wx:for="{{imageList}}" wx:for-item="image" wx:key='item'>
         <image class="uploader-item" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>  

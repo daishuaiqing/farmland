@@ -38,7 +38,7 @@
   </view>
   <view class='f_line'></view>
   <view class='f_item'>
-    <view class='f_item_title'>
+    <view class='f_item_title' bindtap='toSubmit'>
       <image class='my-feedback' src='../../images/user/my_upload.png'></image>
       <text>上传图片</text>
     </view>
