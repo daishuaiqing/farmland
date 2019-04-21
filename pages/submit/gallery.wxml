@@ -1,7 +1,7 @@
 
-<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+<picker bindchange="bindPickerChange" range-key='catName' value="{{index}}" range="{{objectArray}}">
     <view class="picker">
-        <text>分类：{{array[index]}}</text>
+        <text>分类：{{objectArray[index].catName}}</text>
     </view>
 </picker>
 
@@ -9,6 +9,7 @@
     <block wx:for="{{imageList}}" wx:for-item="image" wx:key='item'>
         <image class="uploader-item" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>  
     </block>
-    <view class="uploader-box" bindtap="chooseImage"></view>
+    <view wx:if='{{showOrHidden}}' class="uploader-box" bindtap="chooseImage"></view>
 </view>
 
+<view class="bt" bindtap="submit">保存</view>

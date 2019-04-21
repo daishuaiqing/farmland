@@ -27,7 +27,7 @@ function request(url, data = {}, method = "GET") {
       method: method,
       header: {
         'Content-Type': 'application/json',
-        // 'X-Litemall-Token': wx.getStorageSync('token') 请求的时候带着token
+        'token': wx.getStorageSync('token') //请求的时候带着token
       },
       success: function(res) {
 

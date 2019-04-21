@@ -37,8 +37,8 @@
     <image class='f_goto' src='../../images/user/icon_next_arrow.png'></image>
   </view>
   <view class='f_line'></view>
-  <view class='f_item'>
-    <view class='f_item_title' bindtap='toSubmit'>
+  <view class='f_item' bindtap='toSubmit'>
+    <view class='f_item_title'>
       <image class='my-feedback' src='../../images/user/my_upload.png'></image>
       <text>上传图片</text>
     </view>

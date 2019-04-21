@@ -55,7 +55,16 @@ page {
     font-size: 28rpx;
     margin-left: 30rpx;
 }
-
-
+.bt {
+    width: 668rpx;
+    height: 84rpx;
+    background:rgba(72,184,113,1);
+    border-radius: 4rpx;
+    margin: 50rpx 42rpx;
+    text-align: center;
+    color:rgba(255,255,255,1);
+    font-size:28rpx;
+    line-height: 40px;
+}
 
 

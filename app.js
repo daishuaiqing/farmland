@@ -1,5 +1,6 @@
 var user = require('./utils/user.js');
 var api = require('./config/api.js');
+var util = require('./utils/util.js');
 
 App({
   onLaunch: function () {
@@ -21,12 +22,12 @@ App({
   },
   onShow: function (options) {
     //检查用户是否已经登陆
-    // user.checkLogin().then(res => {
-    //   this.globalData.hasLogin = true;
-    // }).catch(() => {
-    //   this.globalData.hasLogin = false;
-
-    // });
+    user.checkLogin().then(res => {
+      wx.setStorageSync('hasLogin', true);
+    }).catch(() => {
+      wx.setStorageSync('hasLogin', false);
+    });
+    
     /* wx.login({
       success(res) {
         if (res.code) {
@@ -42,10 +43,50 @@ App({
         }
       }
     }) */
+    if(wx.getStorageSync('hasLogin') == false){
+      wx.getUserInfo({
+        success(res) {
+          const userInfo = res.userInfo
+          const nickName = userInfo.nickName
+          const avatarUrl = userInfo.avatarUrl
+          const gender = userInfo.gender // 性别 0：未知、1：男、2：女
+          const province = userInfo.province
+          const city = userInfo.city
+          const country = userInfo.country
+          wx.login({
+            success(res) {
+              if (res.code) {
+                // 发起网络请求
+                util.request(api.WxLoginUrl,{
+                  code: res.code,
+                  userInfo: {
+                    nick: nickName,
+                    avatar: avatarUrl,
+                    gender: gender,
+                    country: country,
+                    province: province,
+                    city: city
+                  }
+                },'POST').then(res => {
+                    //存储用户信息
+                    wx.setStorageSync('userInfo', res);
+                    wx.setStorageSync('token', res.token);
+                    wx.setStorageSync('hasLogin', true);
+                })
+              } else {
+                console.log('登录失败！' + res.errMsg)
+              }
+            }
+          })
+        }
+      })
+    
+    }
+
   },
   //全局数据配置
   globalData: {
-    hasLogin: false
+    //hasLogin: false
   }
 
 })
