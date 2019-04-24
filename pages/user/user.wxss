@@ -1,8 +1,8 @@
 /* pages/user/user.wxss */
 page {
   background: #F2F2F2;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 .userinfo {
   display: flex;
@@ -88,4 +88,29 @@ page {
 .f_line {
   height: 2rpx;
   background: #F4F4F4;
+}
+.auth_model {
+  height: 250rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+}
+.welcome {
+  font-size: 32rpx;
+  margin-top: 20rpx;
+}
+.auth_description {
+  font-size: 28rpx;
+  margin-top: 8rpx;
+}
+.wx-login-btn {
+  margin-top: 20rpx;
+  height: 85rpx;
+  width: 700rpx;
+  color: #48B871;
+  line-height: 85rpx;
 }

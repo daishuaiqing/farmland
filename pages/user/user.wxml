@@ -1,9 +1,9 @@
 <!--pages/user/user.wxml-->
 <view class='userinfo'>
-  <image src='https://wx.qlogo.cn/mmopen/vi_32/GCiaODrDB8pNsLwmLibibpibQFTFARpIibuv0mqFomq2dPe5qQVmCQLG8x62iaicGpZpia0Aq14BWFA0L2JebUd3wia4lNQ/132'></image>
+  <image src='{{avatar}}'></image>
   <view class='info_body'>
-    <text class='username'>代帅卿</text>
-    <text class='telephone'>账号认证：比特云网络科技软件工程师</text>
+    <text class='username'>{{nick}}</text>
+    <text class='telephone'>{{uploader}}</text>
   </view>
 </view>
 <view class='dynamic'>
@@ -44,4 +44,9 @@
     </view>
     <image class='f_goto' src='../../images/user/icon_next_arrow.png'></image>
   </view>
+</view>
+<view wx:if='{{isShowAuth}}' class="auth_model">
+  <text class="welcome">欢迎使用</text>
+  <text class="auth_description">请立即授权，以体验完成功能与服务</text>
+  <button type="primary" open-type="getUserInfo" class="wx-login-btn" bindgetuserinfo="wxLogin">授权登录</button>
 </view>

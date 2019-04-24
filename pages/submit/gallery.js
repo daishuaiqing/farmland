@@ -59,8 +59,7 @@ Page({
       },'POST').then(res => {
         that.setData({
           imageList: [],
-          showOrHidden: true,
-          objectArray: []
+          showOrHidden: true
         })
       })
     });
