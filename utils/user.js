@@ -77,9 +77,11 @@ function loginByWeixin(userInfo) {
 function checkLogin() {
   return new Promise(function(resolve, reject) {
     if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
+      console.log(wx.getStorageSync('userInfo'))
       checkSession().then(() => {
         resolve(true);
       }).catch(() => {
+        console.log('微信session状态过期')
         reject(false);
       });
     } else {

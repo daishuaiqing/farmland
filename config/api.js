@@ -1,5 +1,6 @@
 //本地开发
-var WxApiRoot = 'http://127.0.0.1:9001/';
+//var WxApiRoot = 'http://127.0.0.1:9001/';
+var WxApiRoot = 'http://192.168.11.118:9001/';
 //测试环境
 //生产环境
 module.exports = {

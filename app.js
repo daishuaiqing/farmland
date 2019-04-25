@@ -17,14 +17,16 @@ App({
         }
       })
     })
-  },
-  onShow: function (options) {
+
     //检查用户是否已经登陆
     user.checkLogin().then(res => {
+      console.log('已经登录')
       this.globalData.hasLogin = true;
     }).catch(() => {
       this.globalData.hasLogin = false;
     });
+  },
+  onShow: function (options) {
   },
   //全局数据配置
   globalData: {

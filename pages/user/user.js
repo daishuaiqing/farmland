@@ -26,6 +26,7 @@ Page({
           avatar: '../../images/user/user_icon.png',
           nick: '未登录',
           uploader: '点击使用微信登录',
+          isUploader: false,
           isShowAuth: true
         })
     }else{
@@ -34,6 +35,7 @@ Page({
         avatar: userInfo.avatar,
         nick: userInfo.nick,
         uploader: userInfo.uploader == 1 ? '已认证' : '未认证',
+        isUploader: userInfo.uploader == 1 ? true : false,
         isShowAuth: false
       });
     }
@@ -78,6 +80,7 @@ Page({
                         avatar: res.avatar,
                         nick: res.nick,
                         uploader: res.uploader == 1 ? '已认证' : '未认证',
+                        isUploader: userInfo.uploader == 1 ? true : false,
                         isShowAuth: false
                       });
                       app.globalData.hasLogin == true
